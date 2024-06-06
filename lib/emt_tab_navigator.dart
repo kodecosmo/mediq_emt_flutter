@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'notification_page.dart';
 import 'patient_details_page.dart';
 import 'connected_page.dart';
-import 'status_page.dart';
 import 'nfc_page.dart';
 
 class EMTTabNavigator extends StatelessWidget {

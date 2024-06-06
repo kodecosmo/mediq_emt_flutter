@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'connected_page.dart';
-import 'nfc_page.dart';
 
 class PatientDetailsPage extends StatelessWidget {
   @override
@@ -80,8 +79,9 @@ class PatientDetailsPage extends StatelessWidget {
                           },
                           child: Text('Accept'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green[200],
-                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.green[300],
+                            foregroundColor: Colors.black,
+                            
                           ),
                         ),
 
@@ -92,7 +92,7 @@ class PatientDetailsPage extends StatelessWidget {
                           child: Text('Redirect'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.red[200],
-                            foregroundColor: Colors.white,
+                            foregroundColor: Colors.black,
                           ),
                         ),
                       ],
