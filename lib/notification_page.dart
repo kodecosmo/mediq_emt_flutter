@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'patient_details_page.dart';
 
 class NotificationPage extends StatelessWidget {
   @override
@@ -11,7 +10,7 @@ class NotificationPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 200.0), // Adding top padding here
+            padding: const EdgeInsets.only(top: 200.0), 
             child: Text(
               'Notifications',
               style: GoogleFonts.poppins(
@@ -56,7 +55,8 @@ class NotificationCard extends StatelessWidget {
                 ),
                 Spacer(),
                 IconButton(
-                  icon: Icon(Icons.close),
+                  icon: Icon(Icons.close, color: Colors.red[900],),
+                  
                   onPressed: () {},
                 ),
               ],
@@ -82,7 +82,7 @@ class NotificationCard extends StatelessWidget {
             SizedBox(height: 8),
             ElevatedButton(
               onPressed: () {
-               Navigator.of(context).pushNamed('/patientDetails');
+              Navigator.of(context).pushNamed('/patientDetails');
               },
               child: Text(
                 'Connect',
@@ -93,7 +93,7 @@ class NotificationCard extends StatelessWidget {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightGreen[200],
+                backgroundColor: Colors.green[300],
               ),
             ),
           ],

@@ -35,10 +35,12 @@ class NFCPage extends StatelessWidget {
                       Text('• Patient details scanned successfully.'),
                       SizedBox(height: 20),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/patientDetails');
+                        },
                         child: Text('Proceed'),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green[200],
+                          backgroundColor: Colors.green[300],
                           foregroundColor: Colors.black,
                         ),
                       ),
