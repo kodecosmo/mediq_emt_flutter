@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'notification_page.dart';
-import 'patient_details_page.dart';
-import 'connected_page.dart';
-import 'status_page.dart';
-import 'nfc_page.dart';
 import 'home.dart';
 import 'profile.dart';
 import 'emt_tab_navigator.dart';
+
 
 void main() {
   runApp(MedIQApp());
@@ -18,7 +14,7 @@ class MedIQApp extends StatelessWidget {
     return MaterialApp(
       title: 'MedIQ',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.purple,
       ),
       home: HomePage(),
     );
@@ -57,7 +53,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.emergency_outlined),
+            icon: Icon(Icons.emergency_outlined, color: Colors.purple[700],),
             onPressed: () {},
           ),
         ],
