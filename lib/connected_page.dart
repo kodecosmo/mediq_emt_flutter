@@ -1,16 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:permission_handler/permission_handler.dart';
 
-class ConnectedPage extends StatelessWidget {
+class ConnectedPage extends StatefulWidget {
+  @override
+  _ConnectedPageState createState() => _ConnectedPageState();
+}
+
+class _ConnectedPageState extends State<ConnectedPage> {
+  final LatLng targetLocation = LatLng(6.9271, 79.8612);
+
+  Color _videocamButtonColor = Colors.grey.shade300;
+  Color _micButtonColor = Colors.grey.shade300;
+
+  void _changeVideocamButtonColor(bool isPressed) {
+    setState(() {
+      _videocamButtonColor =
+          isPressed ? Colors.lightGreen.shade300 : Colors.grey.shade300;
+    });
+  }
+
+  void _changeMicButtonColor(bool isPressed) {
+    setState(() {
+      _micButtonColor =
+          isPressed ? Colors.lightGreen.shade300 : Colors.grey.shade300;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final LatLng targetLocation = LatLng(6.9271, 79.8612);
-
     return Scaffold(
       appBar: AppBar(
-     
         actions: [
           PopupMenuButton<String>(
             onSelected: (String result) {
@@ -91,13 +111,39 @@ class ConnectedPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        IconButton(
-                          icon: Icon(Icons.videocam),
-                          onPressed: () {},
+                        GestureDetector(
+                          onTapDown: (_) => _changeVideocamButtonColor(true),
+                          onTapUp: (_) => _changeVideocamButtonColor(false),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: _videocamButtonColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: IconButton(
+                              iconSize: 30.0, // Increase icon size
+                              icon: Icon(Icons.videocam),
+                              onPressed: () {
+                                // Add your onPressed logic here
+                              },
+                            ),
+                          ),
                         ),
-                        IconButton(
-                          icon: Icon(Icons.mic),
-                          onPressed: () {},
+                        GestureDetector(
+                          onTapDown: (_) => _changeMicButtonColor(true),
+                          onTapUp: (_) => _changeMicButtonColor(false),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: _micButtonColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: IconButton(
+                              iconSize: 30.0, // Increase icon size
+                              icon: Icon(Icons.mic),
+                              onPressed: () {
+                                // Add your onPressed logic here
+                              },
+                            ),
+                          ),
                         ),
                       ],
                     ),
